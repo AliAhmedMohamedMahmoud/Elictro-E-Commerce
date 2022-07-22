@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -6,6 +7,7 @@ namespace Project_ASP.Net.ViewModel
 {
     public class ProductViewModel
     {
+        
         [Required(ErrorMessage = "Product Name Is Requierd")]
         //[Range(minimum: 5, maximum: 30, ErrorMessage = "Product Name Must Between 5,30")]
         [MinLength(length: 3, ErrorMessage = "Product Name Must More Than 3 char")]
@@ -22,11 +24,11 @@ namespace Project_ASP.Net.ViewModel
         [Column(TypeName = "money")]
         public double Unit_Price { get; set; }
         public int Stock { get; set; }
+
         [Required(ErrorMessage = "Picture Is Requierd")]
         public IFormFile image { get; set; }
         [Column(TypeName = "money")]
         public int Discount { get; set; }
         public int Cat_id { get; set; }
-
     }
 }
